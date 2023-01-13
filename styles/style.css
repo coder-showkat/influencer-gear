@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    color: #3A3A3A;
 }
 
 /* Header Section */
@@ -52,6 +53,7 @@ nav ul li a {
     align-items: center;
     padding: 5rem 0;
     gap: 5rem;
+    color: #3A3A3A;
 }
 
 .left,
@@ -147,24 +149,42 @@ nav ul li a {
     width: 100%;
 }
 
+.card-name {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
 .fa-star,
 .fa-star-half-o {
     color: #FB8200;
     font-size: 11px;
 }
 
+.rating span {
+    font-size: 14px;
+    margin-left: 0.5rem;
+    color: #5E6366;
+}
+
+.card-description {
+    color: #787885;
+    font-size: 14px;
+}
+
 .collection .more {
-    display: block;
-    text-decoration: none;
-    color: #E02C6DDE;
-    font-weight: 700;
     text-align: right;
     margin-right: 2.5rem;
 }
 
+.collection .more a {
+    text-decoration: none;
+    color: #E02C6DDE;
+    font-weight: 700;
+}
+
 .featured {
     padding: 1rem 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .featured-title {
