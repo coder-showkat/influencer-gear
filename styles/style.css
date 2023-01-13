@@ -22,7 +22,7 @@ header nav {
     margin-top: 3.4rem;
 }
 
-nav .brand-name {
+.brand-name {
     color: #3A3A3A;
     font-size: 1.5rem;
 }
@@ -41,6 +41,11 @@ nav ul li a {
     text-decoration: none;
     color: #3A3A3A;
     font-weight: 600;
+    transition: 0.5s ease;
+}
+
+nav .menu {
+    display: none;
 }
 
 /* Banner Section */
@@ -86,9 +91,34 @@ nav ul li a {
     margin-left: 0.5rem;
 }
 
-.right {
+.banner .right {
     width: 40%;
     flex-shrink: 0;
+    position: relative;
+}
+
+.banner .right::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 3px solid rgba(120, 120, 133, 0.11);
+    border-radius: 50%;
+}
+
+.banner .right::before {
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(120, 120, 133, 0.11);
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .banner-image {
@@ -112,11 +142,11 @@ nav ul li a {
     flex-wrap: wrap;
 }
 
-.img-container {
+.shop .img-container {
     width: 10%;
 }
 
-.img-container>img {
+.shop .img-container>img {
     width: 100%;
 }
 
@@ -182,6 +212,9 @@ nav ul li a {
     font-weight: 700;
 }
 
+
+
+/* Featured Section */
 .featured {
     padding: 1rem 0;
     margin-bottom: 2rem;
@@ -206,6 +239,9 @@ nav ul li a {
     width: 100%;
 }
 
+
+
+/* Footer Section */
 footer {
     width: 100%;
     height: 220px;
@@ -247,19 +283,19 @@ footer p {
 }
 
 
+/* Responsive */
+/* Responsive for mobile device */
 @media screen and (max-width: 576px) {
     header nav {
-        flex-direction: column;
-        gap: 1rem;
+        margin-top: 1.5rem;
     }
 
-    .brand-name {
-        align-self: flex-start;
+    .navbar {
+        display: none;
     }
 
-    header nav ul {
-        flex-wrap: wrap;
-        align-self: flex-end;
+    nav .menu {
+        display: block;
     }
 
     .banner,
@@ -303,19 +339,20 @@ footer p {
 
 }
 
+
+/* Responsive for Tablet */
 @media screen and (min-width: 577px) and (max-width: 992px) {
     header nav {
-        flex-direction: column;
-        gap: 1rem;
+        margin-top: 2rem;
     }
 
-    .brand-name {
-        align-self: flex-start;
+    .navbar {
+        display: none;
     }
 
-    header nav ul {
-        flex-wrap: wrap;
-        align-self: flex-end;
+
+    nav .menu {
+        display: block;
     }
 
     .banner,
@@ -345,5 +382,26 @@ footer p {
 
     .featured {
         padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 180px;
+        background-color: rgb(197, 197, 197);
+        padding: 3rem 1rem;
+        height: 100vh;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    ul li a:hover {
+        text-decoration: underline;
     }
 }
