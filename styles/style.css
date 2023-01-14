@@ -105,6 +105,21 @@ nav .menu {
     left: 0;
     border: 3px solid rgba(120, 120, 133, 0.11);
     border-radius: 50%;
+    animation: banner-animation 1s ease-in-out infinite;
+}
+
+@keyframes banner-animation {
+    0% {
+        transform: scale(100%);
+    }
+
+    50% {
+        transform: scale(110%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
 }
 
 .banner .right::before {
@@ -114,7 +129,7 @@ nav .menu {
     width: 80%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(100%);
     background-color: rgba(120, 120, 133, 0.11);
     border-radius: 50%;
     z-index: -1;
@@ -404,7 +419,7 @@ footer p {
     .navbar ul {
         flex-direction: column;
     }
-    
+
 
     ul li a:hover {
         border-bottom: 2px solid #e02c6d;
